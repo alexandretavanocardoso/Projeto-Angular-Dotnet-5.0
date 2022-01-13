@@ -1,0 +1,6 @@
+C# - principal
+C# extensions - da opção para criar arquivos
+C# XML Documentation Comments - quando faz "//" permite docuentar para coisas externas
+
+nuGet:
+NuGet Gallery - ajuda pra instalar extensoes C#

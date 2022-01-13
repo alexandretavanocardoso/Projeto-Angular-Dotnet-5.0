@@ -1,0 +1,33 @@
+=> Versão
+dotnet --version
+
+=> Todos codigos possiveis
+dotnet -h
+
+=> Cria global.json automatico
+dotnet new global.json --sdk-version 5.0.404
+
+=> Criando webapi
+dotnet new webapi -n Nome
+
+=> Roda Projeto
+dotnet run
+
+=> Roda projeto, porem se tem alteração ele restarta o servidor
+dotnet watch run
+
+
+=> Implementaar permissao https
+dotnet --dev-certs https --trust
+
+=> Ver todas pacotes instalados
+dotnet tool list --global
+
+=> Instalado Dotnet EF
+dotnet tool install --global dotnet-ef
+
+=> Migrations - ef
+dotnet ef migrations add NomeArquivo -o Data/Migrations
+
+=> Database - ef
+dotnet ef database update
