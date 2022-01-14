@@ -1,0 +1,8 @@
+Angular Essentials (Version 12) -- ajuda em snippets
+Angular Files - ajuda a criar componentes/services/enum
+Auto Close Tag - fecha a tag direto
+Auto Rename Tag - renomeia ambas tags
+Bracket Pair Colorizer 2 - colore chaves/parenteses
+Color Highlight - cor hexadecimal
+Debugger for Chrome
+Path Intellisense - mapeia os diretorios da arvore do projeto
