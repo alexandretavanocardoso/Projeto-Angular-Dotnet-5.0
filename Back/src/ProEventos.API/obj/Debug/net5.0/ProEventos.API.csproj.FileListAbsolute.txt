@@ -84,3 +84,9 @@ C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\
 C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\obj\Debug\net5.0\ref\ProEventos.API.dll
 C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\obj\Debug\net5.0\ProEventos.API.pdb
 C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\obj\Debug\net5.0\ProEventos.API.genruntimeconfig.cache
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Application.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Domain.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Persistence.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Application.pdb
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Domain.pdb
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.API\bin\Debug\net5.0\ProEventos.Persistence.pdb

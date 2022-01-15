@@ -31,3 +31,6 @@ dotnet ef migrations add NomeArquivo -o Data/Migrations
 
 => Database - ef
 dotnet ef database update
+
+=> referenciando camadas
+dotnet add ProEventos.API/ProEventos.API.csproj reference ProEventos.Application 
