@@ -27,10 +27,13 @@ dotnet tool list --global
 dotnet tool install --global dotnet-ef
 
 => Migrations - ef
-dotnet ef migrations add NomeArquivo -o Data/Migrations
+dotnet ef migrations add NomeArquivo -p ClassLibrary -s ProjetoPrincipal -o Mapeamento
 
 => Database - ef
 dotnet ef database update
 
 => referenciando camadas
 dotnet add ProEventos.API/ProEventos.API.csproj reference ProEventos.Application 
+
+=> Cria o Banco de dados na referencia "ProEventos.API"
+dotnet ef database update -s ProEventos.API

@@ -10,3 +10,15 @@ C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.Doma
 C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.dll
 C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.Domain\obj\Debug\net5.0\ref\ProEventos.Domain.dll
 C:\Users\tavan\OneDrive\Área de Trabalho\projetoAnguar\Back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.pdb
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\bin\Debug\net5.0\ProEventos.Domain.deps.json
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\bin\Debug\net5.0\ProEventos.Domain.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\bin\Debug\net5.0\ref\ProEventos.Domain.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\bin\Debug\net5.0\ProEventos.Domain.pdb
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.csproj.AssemblyReference.cache
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.AssemblyInfoInputs.cache
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.AssemblyInfo.cs
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.csproj.CoreCompileInputs.cache
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ref\ProEventos.Domain.dll
+C:\Users\tavan\OneDrive\Área de Trabalho\projetoAngular\back\src\ProEventos.Domain\obj\Debug\net5.0\ProEventos.Domain.pdb
