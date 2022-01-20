@@ -13,11 +13,12 @@ namespace ProEventos.Persistence
         public EventosPersistence(ProEventosContext context)
         {
             _context = context;
+            // _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
         public async Task<Evento[]> GetAllEventosByTemaAsync(string tema, bool incluirPalestrantes = false)
         {
-           IQueryable<Evento> query = _context.Eventos
+           IQueryable<Evento> query = _context.Eventos.AsNoTracking()
                                        .Include(e => e.Lotes)
                                        .Include(e => e.RedesSociais);
 
@@ -35,13 +36,13 @@ namespace ProEventos.Persistence
 
         public async Task<Evento[]> GetAllEventosAsync(bool incluirPalestrantes = false)
         {
-            IQueryable<Evento> query = _context.Eventos
+            IQueryable<Evento> query = _context.Eventos.AsNoTracking()
                                        .Include(e => e.Lotes)
                                        .Include(e => e.RedesSociais);
 
             if(incluirPalestrantes == true){
                 query = query.Include(e => e.PalestrantesEventos)
-                             .ThenInclude(e => e.PalestranteId);
+                             .ThenInclude(e => e.Palestrante);
             }
 
             query = query.OrderBy(e => e.Id);
@@ -51,13 +52,13 @@ namespace ProEventos.Persistence
 
         public async Task<Evento> GetEventoByIdAsync(int eventoId, bool incluirPalestrantes = false)
         {
-            IQueryable<Evento> query = _context.Eventos
+            IQueryable<Evento> query = _context.Eventos.AsNoTracking()
                                        .Include(e => e.Lotes)
                                        .Include(e => e.RedesSociais);
 
             if(incluirPalestrantes == true){
                 query = query.Include(e => e.PalestrantesEventos)
-                             .ThenInclude(e => e.PalestranteId);
+                             .ThenInclude(e => e.Palestrante);
             }
 
             query = query.OrderBy(e => e.Id)

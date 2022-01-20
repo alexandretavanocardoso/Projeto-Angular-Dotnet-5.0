@@ -12,8 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProEventos.Application;
+using ProEventos.Application.Contrato;
 using ProEventos.Persistence;
 using ProEventos.Persistence.Contexto;
+using ProEventos.Persistence.Contrato;
 
 namespace ProEventos.API
 {
@@ -26,14 +29,21 @@ namespace ProEventos.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ProEventosContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("Default"))
             );
 
-            services.AddControllers();
+            services.AddControllers()
+                    .AddNewtonsoftJson(
+                        x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                    ); // Ignorando looping de métodos com chaves estrangeiras
+
+            services.AddScoped<IEventosService, EventosService>();
+            services.AddScoped<IEventosPersistence, EventosPersistence>();
+            services.AddScoped<IGeralPersistence, GeralPersistence>();
+            services.AddScoped<IPalestrantePersistence, PalestrantePersistence>();
             
             services.AddCors();
 

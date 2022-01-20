@@ -48,7 +48,7 @@ namespace ProEventos.Application
 
                 eventoModel.Id = eventoId;
 
-                _geralPersistence.Update<Evento>(eventoModel);
+                _geralPersistence.Update(eventoModel);
                 if (await _geralPersistence.SaveChangesAsync())
                 {
                     return await _eventosPersistence.GetEventoByIdAsync(eventoModel.Id, false);
