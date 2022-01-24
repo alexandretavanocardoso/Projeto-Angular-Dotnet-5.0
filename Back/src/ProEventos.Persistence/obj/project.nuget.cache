@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v6nDcPVdfdL+4l/7zBDFjQg32/O3z5W7Ga5Fmav2V0pFuN7KTu/ke9vxuIdHXFBFaLLQ7ZNTGq2IC4IiJvd0dg==",
+  "dgSpecHash": "mkgPUMdBW4snVtKVXI5TyMaExqpdOxmcTVvPOkmM2zGvKAKaq5sPGM50CLQQxQZ8wnku2EnI/Fd7pBS5p+O46w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.Persistence\\ProEventos.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tavan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tavan\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

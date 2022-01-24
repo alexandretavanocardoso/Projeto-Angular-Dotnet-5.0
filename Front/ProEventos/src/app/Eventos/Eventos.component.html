@@ -14,6 +14,7 @@
     <tr>
       <th>
         <button (click)="AlterarImgem()" class="btn btn-primary">
+          <i class='{{exibirImagem == true ? "fa fa-eye" : "fa fa-eye-slash"}}'></i>
           {{exibirImagem == true ? "Exibir" : "Ocultar"}}
         </button>
       </th>
@@ -35,15 +36,21 @@
               [style.margin.px]="2"
               src="../../assets/prod1.jpg"> <!--{{item.imagemUrl}} -->
       </td>
-      <td>{{item.eventoId}}</td>
+      <td>{{item.id}}</td>
       <td>{{item.temaEvento}}</td>
       <td>{{item.local}}</td>
       <td>{{item.dataEvento}}</td>
       <td>{{item.quantidadePessoas}}</td>
-      <td>{{item.lote}}</td>
+      <td>{{item.lotes[0].nome}}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm" [style.marginRight.px]="12">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+        <button type="button" class="btn btn-primary btn-sm" [style.marginRight.px]="12">
+          <i class='fa fa-edit'></i>
+          Editar
+        </button>
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class='fa fa-trash'></i>
+          Excluir
+        </button>
       </td>
     </tr>
   </tbody>

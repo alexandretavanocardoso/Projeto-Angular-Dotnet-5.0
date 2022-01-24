@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NAphGVFSFqRGBqw5ZsKQZfiekMeBzD8coF/DmY2UMmbYuB+d/YJpn9/PUKyH7RpqS+PzNIfypWnOixIZGQS5Pw==",
+  "dgSpecHash": "6cq84b37+If/UL9+mnfSBgB2adrG8yMVmmLAhISO30jN8A7IQpSOXv8CXqxVGzqE62tpA0tnHeG/7n8zDE0gqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
+  "projectFilePath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tavan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\tavan\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.3\\microsoft.aspnetcore.jsonpatch.5.0.3.nupkg.sha512",

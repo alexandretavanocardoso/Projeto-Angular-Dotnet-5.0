@@ -1,6 +1,7 @@
 
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Evento } from '../models/Evento';
+import { EventoService } from '../services/Evento.service';
 
 @Component({
   selector: 'app-Eventos',
@@ -9,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
 
-  exibirImagem: boolean = false;
-  public eventos: any = [];
-  public eventosFiltrados: any = [];
-  private _filtroLista: string = "";
+  public eventos: Evento[] = [];
+  public eventosFiltrados: Evento[] = [];
+  exibirImagem = false;
+  private _filtroLista = "";
 
   public get filtroLista(): string {
     return this._filtroLista;
@@ -23,31 +24,31 @@ export class EventosComponent implements OnInit {
     this.eventosFiltrados = this.filtroLista ? this.filtrarEventos(this.filtroLista) : this.eventos;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private eventoService: EventoService) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.getEvetos();
   }
 
   public getEvetos(): void {
-    this.http.get('https://localhost:5001/api/eventos/recuperarGet').subscribe(
-      response => {
-        this.eventos = response,
+    this.eventoService.getEventos().subscribe({
+      next: (_eventos: Evento[]) => {
+        this.eventos = _eventos,
         this.eventosFiltrados = this.eventos
       },
-      error => console.log(error)
-    );
+      error: (error: any) => console.log(error)
+    });
   }
 
   public AlterarImgem(){
     this.exibirImagem = !this.exibirImagem;
   }
 
-  public filtrarEventos(filtrarPor: string): any {
+  public filtrarEventos(filtrarPor: string): Evento[] {
     filtrarPor = filtrarPor?.toLocaleLowerCase();
 
-    return this.eventos.filter((evento: { tema: string; local: string; }) =>
-      evento.tema?.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
+    return this.eventos.filter(evento =>
+      evento.temaEvento?.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
       evento.local?.toLocaleLowerCase().indexOf(filtrarPor) !== -1
     );
 

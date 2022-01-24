@@ -1488,11 +1488,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
+      "projectUniqueName": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
       "projectName": "ProEventos.API",
-      "projectPath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.API\\ProEventos.API.csproj",
+      "projectPath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.API\\ProEventos.API.csproj",
       "packagesPath": "C:\\Users\\tavan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.API\\obj\\",
+      "outputPath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tavan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1507,8 +1507,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.Application\\ProEventos.Application.csproj": {
-              "projectPath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.Application\\ProEventos.Application.csproj"
+            "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.Application\\ProEventos.Application.csproj": {
+              "projectPath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.Application\\ProEventos.Application.csproj"
             }
           }
         }

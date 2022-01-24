@@ -11,6 +11,7 @@ import { EventosComponent } from './Eventos/Eventos.component';
 import { PalestrantesComponent } from './Palestrantes/Palestrantes.component';
 import { NavComponent } from './Nav/Nav.component';
 
+import { EventoService } from './services/Evento.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { NavComponent } from './Nav/Nav.component';
     CollapseModule.forRoot(),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    EventoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

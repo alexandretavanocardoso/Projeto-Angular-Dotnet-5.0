@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gG1zxz1Wtdd6Ib9h44x0RvS49/BMukbdzjupplejsGFc49NBHuK9OHQ7vi0xyXbjXyJJ3rE1xmwC53JW1bTdXg==",
+  "dgSpecHash": "Nau4i74Y4N8bXEB3UJl58iaqVd+vSF9GTkaHr/K9fbrU6MI7So39tEs9Zre62sAN5KmixN7QlCpht7b1SLQITg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
+  "projectFilePath": "C:\\Users\\tavan\\OneDrive\\Área de Trabalho\\projetoAngular\\Back\\src\\ProEventos.Domain\\ProEventos.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
