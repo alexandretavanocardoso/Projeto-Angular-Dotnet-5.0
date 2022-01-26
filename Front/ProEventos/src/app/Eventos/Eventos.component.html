@@ -1,9 +1,14 @@
 <h2>Eventos</h2>
-<hr>
+<hr />
 
 <div class="form-inline">
-  <div class="form-group mb-2" style="display: flex;">
-    <input [(ngModel)]="filtroLista" type="text" class="form-control mr-2" placeholder="Buscar">
+  <div class="form-group mb-2" style="display: flex">
+    <input
+      [(ngModel)]="filtroLista"
+      type="text"
+      class="form-control mr-2"
+      placeholder="Buscar"
+    />
   </div>
 </div>
 
@@ -14,8 +19,10 @@
     <tr>
       <th>
         <button (click)="AlterarImgem()" class="btn btn-primary">
-          <i class='{{exibirImagem == true ? "fa fa-eye" : "fa fa-eye-slash"}}'></i>
-          {{exibirImagem == true ? "Exibir" : "Ocultar"}}
+          <i
+            class="{{ exibirImagem == true ? 'fa fa-eye' : 'fa fa-eye-slash' }}"
+          ></i>
+          {{ exibirImagem == true ? "Exibir" : "Ocultar" }}
         </button>
       </th>
       <th>#</th>
@@ -23,32 +30,45 @@
       <th>Local</th>
       <th>Data</th>
       <th>Qtd Participantes</th>
-      <th>Lote</th>
       <th>Opções</th>
     </tr>
   </thead>
   <tbody *ngIf="eventos && eventos.length">
     <tr *ngFor="let item of eventosFiltrados">
       <td>
-         <img [collapse]="exibirImagem"
-              [isAnimated]="true"
-              [style.width.px]="150"
-              [style.margin.px]="2"
-              src="../../assets/prod1.jpg"> <!--{{item.imagemUrl}} -->
+        <img
+          [collapse]="exibirImagem"
+          [isAnimated]="true"
+          [style.width.px]="150"
+          [style.margin.px]="2"
+          src="../../assets/prod1.jpg"
+        />
+        <!--{{item.imagemUrl}} -->
       </td>
-      <td>{{item.id}}</td>
-      <td>{{item.temaEvento}}</td>
-      <td>{{item.local}}</td>
-      <td>{{item.dataEvento}}</td>
-      <td>{{item.quantidadePessoas}}</td>
-      <td>{{item.lotes[0].nome}}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.temaEvento }}</td>
+      <td>{{ item.local }}</td>
+      <td>{{ item.dataEvento | DateTimeFormat }}</td>
+      <td>{{ item.quantidadePessoas }}</td>
       <td>
-        <button type="button" class="btn btn-primary btn-sm" [style.marginRight.px]="12">
-          <i class='fa fa-edit'></i>
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          [style.marginRight.px]="12"
+          tooltip="Editar"
+          placement="top"
+        >
+          <i class="fa fa-edit"></i>
           Editar
         </button>
-        <button type="button" class="btn btn-danger btn-sm">
-          <i class='fa fa-trash'></i>
+        <button
+          type="button"
+          class="btn btn-danger btn-sm"
+          tooltip="Excluir"
+          placement="top"
+          (click)="openModal(template)"
+        >
+          <i class="fa fa-trash"></i>
           Excluir
         </button>
       </td>
@@ -62,3 +82,11 @@
 </table>
 
 <!-- {{eventos | json}} -->
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Tem certeza que quer deletar este evento?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
