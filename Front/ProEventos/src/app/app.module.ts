@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,14 +12,18 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { AppComponent } from './app.component';
-import { EventosComponent } from './Eventos/Eventos.component';
-import { PalestrantesComponent } from './Palestrantes/Palestrantes.component';
-import { NavComponent } from './Nav/Nav.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
+import { AppComponent } from './app.component';
+import { EventosComponent } from './components/Eventos/Eventos.component';
+import { PalestrantesComponent } from './components/Palestrantes/Palestrantes.component';
+import { NavComponent } from './shared/Nav/Nav.component';
+import { ContatosComponent } from './components/Contatos/Contatos.component';
+import { DashboardComponent } from './components/Dashboard/Dashboard.component';
+import { PerfilComponent } from './components/Perfil/Perfil.component';
+import { TituloComponent } from './shared/Titulo/Titulo.component';
 
 import { EventoService } from './services/Evento.service';
-
 
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 
@@ -29,6 +33,10 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
     EventosComponent,
     PalestrantesComponent,
     NavComponent,
+    ContatosComponent,
+    DashboardComponent,
+    PerfilComponent,
+    TituloComponent,
     DateTimeFormatPipe
    ],
   imports: [
@@ -46,11 +54,13 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
       progressBar: true
-    })
+    }),
+    NgxSpinnerModule
   ],
   providers: [
     EventoService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
