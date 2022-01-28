@@ -22,6 +22,8 @@ import { ContatosComponent } from './components/Contatos/Contatos.component';
 import { DashboardComponent } from './components/Dashboard/Dashboard.component';
 import { PerfilComponent } from './components/Perfil/Perfil.component';
 import { TituloComponent } from './shared/Titulo/Titulo.component';
+import { EventoDetalheComponent } from './components/Eventos/EventoDetalhe/EventoDetalhe.component';
+import { EventoListagemComponent } from './components/Eventos/EventoListagem/EventoListagem.component';
 
 import { EventoService } from './services/Evento.service';
 
@@ -37,7 +39,9 @@ import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
     DashboardComponent,
     PerfilComponent,
     TituloComponent,
-    DateTimeFormatPipe
+    DateTimeFormatPipe,
+    EventoDetalheComponent,
+    EventoListagemComponent
    ],
   imports: [
     BrowserModule,
