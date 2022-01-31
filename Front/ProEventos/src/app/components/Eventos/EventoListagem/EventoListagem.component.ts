@@ -4,7 +4,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Evento } from 'src/app/models/Evento';
-import { EventoService } from 'src/app/services/Evento.service';
+import { EventoService } from '@app/services/Evento.service';
 
 @Component({
   selector: 'app-EventoListagem',

@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm" *ngIf="showMenu()">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="Dashboard" >Pro Eventos</a>
+    <a class="navbar-brand" routerLink="Dashboard" >
+      <i class="fa fa-users mb-2"></i>
+    </a>
     <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,12 +24,12 @@
           aria-haspopup="true" aria-expanded="false">
           Alexandre
         </a>
-        <div *dropdownMenu class="dropdown-menu" routerLink="Perfil" style="cursor: pointer;" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item">
+        <div *dropdownMenu class="dropdown-menu"style="cursor: pointer;" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="user/Perfil" >
             Perfil
           </a>
           <div role="separator" class="divider" style="cursor: pointer;"></div>
-          <a class="dropdown-item">
+          <a class="dropdown-item" routerLink="user/login" >
             Sair
           </a>
         </div>
