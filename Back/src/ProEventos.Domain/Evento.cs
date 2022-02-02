@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProEventos.Domain
 {
+    [Table("EVENTO")]
     public class Evento
     {
         public int Id { get; set; }
@@ -11,6 +14,11 @@ namespace ProEventos.Domain
 
         public DateTime? DataEvento { get; set; }
 
+        [NotMapped]
+        public int ContagemDias { get; set; }
+
+        [Required]
+        [MaxLength(50)]
         public string TemaEvento { get; set; }
 
         public int QuantidadePessoas { get; set; }
@@ -18,7 +26,7 @@ namespace ProEventos.Domain
         public string ImagemUrl { get; set; }
 
         public string Telefone { get; set; }
-        
+
         public string Email { get; set; }
 
         public IEnumerable<Lote> Lotes { get; set; }

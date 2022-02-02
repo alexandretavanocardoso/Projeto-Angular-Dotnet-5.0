@@ -1,7 +1,9 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProEventos.Domain
 {
+    [Table("LOTE")]
     public class Lote
     {
         public int Id { get; set; }
