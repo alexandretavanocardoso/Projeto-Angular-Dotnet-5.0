@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProEventos.Domain
 {
-    [Table("PALESTRANTE")]
+
     public class Palestrante
     {
         public int Id { get; set; }

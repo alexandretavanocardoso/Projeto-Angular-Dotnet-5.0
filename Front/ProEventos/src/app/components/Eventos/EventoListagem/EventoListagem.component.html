@@ -66,7 +66,7 @@
             class="btn btn-danger btn-lg"
             tooltip="Excluir"
             placement="top"
-            (click)="openModal(template)"
+            (click)="openModal($event, template, item.id)"
           >
             <i class="fa fa-trash"></i>
           </button>
@@ -86,7 +86,7 @@
 
 <ng-template #template>
   <div class="modal-body text-center">
-    <p>Tem certeza que quer deletar este evento?</p>
+    <p>Tem certeza que quer deletar o evento de código {{this.eventoId}}?</p>
     <button type="button" class="btn btn-default" (click)="confirm()">
       Sim
     </button>
