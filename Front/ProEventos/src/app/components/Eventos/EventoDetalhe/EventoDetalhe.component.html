@@ -32,7 +32,7 @@
           <label>Data e Hora</label>
           <input
           bsDatepicker
-          value="{{evento.dataEvento | DateTimeFormat}}"
+          value="{{evento?.dataEvento | DateTimeFormat}}"
           [bsConfig]="bsConfig"
           type="datetime" [ngClass]="cssValidator(f.dataEvento)" class="form-control" formControlName="dataEvento" placeholder="" />
           <div class="invalid-feedback">
@@ -88,7 +88,7 @@
         <button class="btn btn-outline-secondary mr-auto border" (click)="resetForm()">
           Cancelar Alteração
         </button>
-        <button class="btn btn-success" [disabled]="!form.valid">
+        <button class="btn btn-success" [disabled]="!form.valid" (click)="salvarAlteracao()">
           <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
           Salvar Evento
         </button>
