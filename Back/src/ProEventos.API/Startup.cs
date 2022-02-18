@@ -45,8 +45,10 @@ namespace ProEventos.API
 
             services.AddScoped<IEventosService, EventosService>();
             services.AddScoped<IEventosPersistence, EventosPersistence>();
+            services.AddScoped<ILotesPersistence, LotesPersistence>();
             services.AddScoped<IGeralPersistence, GeralPersistence>();
             services.AddScoped<IPalestrantePersistence, PalestrantePersistence>();
+            services.AddScoped<ILotesPersistence, LotesPersistence>();
             
             services.AddCors();
 
