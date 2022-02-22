@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import {
+  AbstractControl,
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -9,6 +11,7 @@ import {
 } from '@angular/forms';
 
 import { Evento } from '@app/models/Evento';
+import { Lote } from '@app/models/Lote';
 
 import { EventoService } from '@app/services/Evento.service';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
@@ -27,6 +30,10 @@ export class EventoDetalheComponent implements OnInit {
   locale: string = 'pt-br';
   estadoSalvar: string = 'post';
 
+  get modoEditar(): boolean{
+    return this.estadoSalvar == 'put';
+  }
+
   get bsConfig(): any {
     return {
       isAnimated: true,
@@ -41,13 +48,18 @@ export class EventoDetalheComponent implements OnInit {
     return this.form.controls;
   }
 
+  get lotes(): FormArray{
+    return this.form.get('lotes') as FormArray;
+  }
+
   constructor(
     private fb: FormBuilder,
     private localeService: BsLocaleService,
-    private router: ActivatedRoute,
+    private activedRouter: ActivatedRoute,
     private eventoService: EventoService,
     private spinner: NgxSpinnerService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
     this.localeService.use(this.locale);
   }
@@ -76,19 +88,36 @@ export class EventoDetalheComponent implements OnInit {
       imagemUrl: ['', Validators.required],
       telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      lotes: this.fb.array([])
+    });
+  }
+
+  public adicionarLote(): void {
+    this.lotes.push(this.criarLote({id: 0} as Lote));
+  }
+
+  public criarLote(lote: Lote): FormGroup{
+    return this.fb.group({
+      id: [lote.id],
+      nome: [lote.nome, Validators.required],
+      preco: [lote.preco, Validators.required],
+      quantidade: [lote.quantidade, Validators.required],
+      dataInicio: [lote.dataInicio],
+      dataFim: [lote.dataFim],
     });
   }
 
   public resetForm(): void {
     this.form.reset();
+    this.router.navigate([`Eventos/EventoLista`]);
   }
 
-  public cssValidator(campoForm: FormControl): any {
-    return { 'is-invalid': campoForm.errors && campoForm.touched };
+  public cssValidator(campoForm: FormControl | AbstractControl | null): any {
+    return { 'is-invalid': campoForm?.errors && campoForm?.touched };
   }
 
   public carregarEvento(): void {
-    const eventoIdParam = this.router.snapshot.paramMap.get('id');
+    const eventoIdParam = this.activedRouter.snapshot.paramMap.get('id');
 
     if (eventoIdParam != null) {
       this.spinner.show();
@@ -119,7 +148,11 @@ export class EventoDetalheComponent implements OnInit {
 
       if(this.estadoSalvar === 'post'){
         this.eventoService.post(this.evento).subscribe(
-          () => this.toastr.success('Evento salvo', 'Sucesso'),
+          (eventoRetorno: Evento) => {
+            this.toastr.success('Evento salvo', 'Sucesso');
+
+            this.router.navigate([`Eventos/EventoDetalhe/${eventoRetorno.id}`]);
+          },
           (error: any) => {
             console.error(error);
             this.toastr.error('Erro ao criar!', 'Erro');

@@ -30,6 +30,7 @@ import { EventoDetalheComponent } from './components/Eventos/EventoDetalhe/Event
 import { EventoListagemComponent } from './components/Eventos/EventoListagem/EventoListagem.component';
 
 import { EventoService } from './services/Evento.service';
+import { LoteService } from './services/lote.service';
 
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { UserComponent } from './components/user/user.component';
@@ -76,7 +77,8 @@ defineLocale('pt-br', ptBrLocale);
     BsDatepickerModule.forRoot()
   ],
   providers: [
-    EventoService
+    EventoService,
+    LoteService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
