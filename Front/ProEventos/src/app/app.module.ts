@@ -10,6 +10,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+import { NgxCurrencyModule } from 'ngx-currency';
+
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
@@ -74,7 +76,8 @@ defineLocale('pt-br', ptBrLocale);
       progressBar: true
     }),
     NgxSpinnerModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    NgxCurrencyModule
   ],
   providers: [
     EventoService,
