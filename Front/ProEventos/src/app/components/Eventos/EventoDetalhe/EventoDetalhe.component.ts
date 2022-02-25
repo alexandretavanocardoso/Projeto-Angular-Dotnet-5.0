@@ -20,6 +20,7 @@ import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { environment } from '@environments/environment';
 
 @Component({
   selector: 'app-EventoDetalhe',
@@ -27,6 +28,9 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./EventoDetalhe.component.scss'],
 })
 export class EventoDetalheComponent implements OnInit {
+  imagemURL = '../../../../assets/download.jpg'
+  file!: File[];
+
   modalRef!: BsModalRef;
 
   evento!: Evento;
@@ -105,7 +109,7 @@ export class EventoDetalheComponent implements OnInit {
         '',
         [Validators.required, Validators.maxLength(120000)],
       ],
-      imagemUrl: ['', Validators.required],
+      imagemUrl: [''],
       telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       lotes: this.fb.array([])
@@ -133,6 +137,10 @@ export class EventoDetalheComponent implements OnInit {
         next: (evento: Evento) => {
           this.evento = { ...evento };
           this.form.patchValue(this.evento);
+
+          if(this.evento.imagemUrl != ''){
+            this.imagemURL = environment.apiUrl + 'Resources/image/' + this.evento.imagemUrl;
+          }
 
           this.carregarLotes();
         },
@@ -258,5 +266,32 @@ export class EventoDetalheComponent implements OnInit {
 
   public retornaTituloLote(nome: string): string {
     return nome === null || nome === '' ? 'Nome do lote' : nome
+  }
+
+  public onFileChange(ev: any): void{
+    const reader = new FileReader();
+
+    // quando carregar o meu reader vai alterar a imagem do this.imagemURL
+    reader.onload = (event: any) => this.imagemURL = event.target.result;
+
+    this.file = ev.target.files;
+    reader.readAsDataURL(this.file[0]);
+
+    this.uploadImagem();
+  }
+
+  public uploadImagem(): void {
+      this.spinner.show();
+
+      this.eventoService.postUpload(this.eventoId, this.file).subscribe(
+        () => {
+          this.carregarEvento();
+          this.toastr.success("Sucesso ao atualizar imagem", "Sucesso");
+        },
+        (error: any) => {
+          this.toastr.success("Erro ao atualizar imagem", "Erro");
+          console.error(error);
+        }
+      ).add(() => this.spinner.hide())
   }
 }
